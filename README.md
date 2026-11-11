@@ -6,7 +6,7 @@
 
 ---
 
-## 仓库结构
+## 目录结构
 
 ```
 .
@@ -15,7 +15,7 @@
 │   └── short-drama-qc-standards-wangnan/     ← Agent Skill（拷进 .user_skills 即可用）
 │       ├── SKILL.md                          调用入口：题材必选 + 流程 + 判定口径
 │       ├── references/
-│       │   ├── pipeline-10stage.md            第 0 套·常驻层
+│       │   ├── pipeline-10stage.md            第 0 套·常驻层（55 条 + 5 张专项复检表）
 │       │   ├── theme-*.md                     14 套题材专项清单
 │       │   ├── stage-gate-map.md              附录 A·10 阶段卡点流转表
 │       │   ├── report-template.md             附录 D·报告结构
@@ -25,10 +25,11 @@
 │           ├── qc_state.py                    项目状态 / 风险台账（题材必选）
 │           ├── build_report.py                出报告骨架（八节 + 审计栏 + 待办四表）
 │           └── qc_lint.py                     四道自检（skill / checklists / validators / report）
-└── docs/                                      三份可分发成品（体积大，按需放入）
+└── docs/
+    ├── 漫剧全题材质检标准合集V1.md            表格版合集，可直接复制给人
+    ├── 漫剧全题材质检标准合集V1-手机版.md     手机阅读版（表格已拆成单条）
+    └── 漫剧全题材质检标准合集V1-H5.html       单文件 H5，打开先选题材才能看
 ```
-
-> `docs/` 三份成品（表格版 md / 手机版 md / 单文件 H5）合计约 500KB，未随本仓库提交；需要时从本地打包的 zip 拖到 `docs/` 上传即可，不影响 Skill 使用。
 
 ---
 
@@ -54,16 +55,16 @@
 
 ## 给 Agent 用（装 Skill）
 
-把 `skills/short-drama-qc-standards-wangnan/` 整个目录放进 Agent 的用户技能目录：
+把 `skills/short-drama-qc-standards-wangnan/` 整个目录放进 Agent 的用户技能目录，通常是：
 
 ```
 <workspace>/.user_skills/short-drama-qc-standards-wangnan/
 ```
 
 - `SKILL.md` 的 frontmatter `name` 必须与目录名一致，改名会导致触发不到。
-- `references/` 相对路径不能拆散；`scripts/` 只用 Python 标准库，无需装依赖。
+- `references/` 里的相对路径不能拆散，`scripts/` 只用 Python 标准库，无需装依赖。
 
-装好后先跑自检：
+装好后先跑一次自检：
 
 ```bash
 python scripts/qc_lint.py skill      --skill <skill目录>
@@ -77,7 +78,8 @@ python scripts/qc_lint.py validators --skill <skill目录> --roots <.skills> --r
 
 ## 给人用（没有 Agent）
 
-- **要能复制**：用表格版 md；**手机上翻**：用手机版 md 或单文件 H5（支持搜索、按等级筛选，打开先选题材）。
+- **要能复制**：用 `docs/漫剧全题材质检标准合集V1.md`。
+- **手机上翻**：用手机版 md，或用 `docs/漫剧全题材质检标准合集V1-H5.html`（支持搜索、按等级筛选，打开先选题材）。
 - 对方开工第一句：把 15 项列给他单选，选完再加载「第 0 套 + 所选题材」。
 
 ---
