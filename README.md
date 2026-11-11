@@ -128,4 +128,18 @@ H3 六段式台词块｜H3 段长 4–15 秒硬区间｜15 秒分段硬脚本｜
 
 ## 许可
 
-未附授权条款；如需对外分发，请先与作者确认许可方式。
+本仓库**原创部分**（README、`docs/` 三份成品、`skills/short-drama-qc-standards-wangnan/` 全部内容）
+按 **CC BY-NC-SA 4.0** 授权：署名（wangnan + 本仓库链接）、非商业使用、相同方式共享。全文见 [LICENSE](LICENSE)。
+
+商业授权请与作者联系。
+
+## 第三方内容
+
+本仓库**不包含**任何第三方 skill 的正文副本。清单与矩阵中出现的 `sd-qc-engine`、`sd-feed-engine`、
+`short-drama-director` 等名称属于「调用关系声明」；`references/model-compat-matrix.md` 第三节的
+8 条跨模型失效条款是对这些 skill 原文的**压缩转述 + 出处标注**（章节号 / 文件名 / 行号）。
+
+版权归各自作者（套装部分为 **漫剧老李AIGC · V7.4.26**），本仓库不对其再授权。逐条归属见
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+如果你是其中某个 skill 的作者且认为引用方式不妥，开 Issue 即可，我会调整或移除。
